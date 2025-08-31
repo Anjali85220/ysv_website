@@ -1,0 +1,113 @@
+.specs {
+  padding: 5rem 2rem;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #edf6f7, #e9eeef); /* modern soft teal gradient */
+  color: #1f2937; /* default text color */
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: #0c4a6e; /* darker teal for heading */
+}
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.floorplan-container {
+  display: flex;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.floorplan {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.floorplan-container:hover .floorplan {
+  transform: rotateY(10deg) rotateX(5deg) scale(1.05);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.details {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.details:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.details h3 {
+  color: #1c72a3; /* match theme */
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.features-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 1rem;
+  color: #1f2937;
+}
+
+.features-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #06b6d4; /* accent teal checkmark */
+  font-weight: bold;
+}
+
+.structure {
+  margin: 3rem auto 0 auto;
+  max-width: 800px;
+  background: linear-gradient(135deg, #ffffff, #e0f7fa); /* lighter gradient */
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  border-left: 6px solid #06b6d4; /* theme accent */
+  border-right: 6px solid #06b6d4;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.structure:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.12);
+}
+
+.structure h3 {
+  color: #0284c7; /* darker teal heading */
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.structure p {
+  color: #1f2937;
+  line-height: 1.7;
+  font-size: 1rem;
+}

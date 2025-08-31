@@ -1,0 +1,94 @@
+/* Navbar styles remain same */
+.navbar {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 60px;
+  z-index: 1000;
+  border-bottom: none;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 500;
+  color: #0a2e65;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin: 0; padding: 0;
+}
+
+/* Default link style */
+.nav-links li a {
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #030a57;
+  transition: 0.3s;
+  padding: 6px 14px;
+  border-radius: 8px;
+  white-space: nowrap; /* ✅ keeps text on one line */
+}
+
+
+/* Transparent button style only for some items */
+.nav-links li a.transparent-btn {
+  border: 2px solid rgba(0, 153, 255, 0.5); /* light blue border */
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.nav-links li a.transparent-btn:hover {
+  background: rgba(0, 153, 255, 0.1); /* light blue shade on hover */
+  border-color: #0099ff;
+  color: #0099ff;
+  transform: translateY(-2px);
+}
+
+/* Login button stays filled */
+.login-btn {
+  background: #0a66ff;
+  color: #fff !important;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.login-btn:hover {
+  background: #0046b3;
+}
+
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #333;
+}
+
+@media (max-width: 992px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px; right: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.open { display: flex; }
+  .hamburger { display: block; }
+}

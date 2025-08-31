@@ -1,0 +1,71 @@
+.about-builder {
+  padding: 100px 10%;
+  background: linear-gradient(135deg, #bdd8effb, #c8edf0);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  margin: 60px auto;
+  max-width: 1200px;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;      /* vertical center */
+  justify-content: space-between;
+  gap: 60px;                /* more spacing between text & image */
+  flex-wrap: nowrap;        /* keep them in one row */
+}
+
+.text-side {
+  flex: 1;
+  min-width: 400px;
+align-items: center; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* vertically centers About Us + Contact */
+  gap: 20px;                /* nice spacing between elements */
+}
+
+.cta-btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: #f4c542;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  background: #dba80f;
+  color: white;
+}
+
+
+.image-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;      /* centers the image vertically */
+}
+
+.engineer-img {
+  width: 760px;
+  max-width: 100%;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Responsive fix */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;   /* stack for small screens */
+    text-align: center;
+  }
+  .text-side {
+    min-width: unset;
+  }
+  .image-side {
+    margin-top: 30px;
+  }
+}

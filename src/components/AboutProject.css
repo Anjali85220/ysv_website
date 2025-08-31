@@ -1,0 +1,127 @@
+.about-project {
+  padding: 80px 10%;
+  background: linear-gradient(135deg, #d4f3f5, #f7f9fc);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  margin: 60px auto;
+  max-width: 1200px;
+  overflow: hidden;
+}
+
+.about-project-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  flex-wrap: nowrap;
+}
+
+.image-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.building-img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  transform: translateY(0);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  animation: float 5s ease-in-out infinite;
+}
+
+.building-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+.text-side {
+  flex: 1;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #222;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: #f39c12;
+  display: block;
+  margin-top: 10px;
+  border-radius: 2px;
+  animation: slideIn 1s ease forwards;
+}
+
+.project-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.highlight {
+  color: #f39c12;
+  font-weight: 600;
+}
+
+.cta-btn {
+  padding: 12px 25px;
+  background: #f39c12;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: #d68910;
+  transform: translateY(-3px);
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Line Animation */
+@keyframes slideIn {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80px;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-project-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image-side {
+    margin-bottom: 30px;
+  }
+
+  .section-title::after {
+    margin: 10px auto 0;
+  }
+}
