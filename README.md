@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+# 🏡 YSV Real Estate Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+YSV Real Estate is a modern, responsive real estate website built with [React/Vite/Next.js] (update with your stack).  
+The website showcases property listings with a clean UI, smooth animations, and a professional design.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
+- 🏘️ Property listing showcase (images, price, description)
+- 🔎 Search & filter functionality
+- 📱 Fully responsive design (mobile, tablet, desktop)
+- 🎨 Modern UI with glassmorphism & animations
+- 🌐 Deployed on [Vercel](https://vercel.com)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📂 Project Structure
+ysv-real-estate/
+├── public/ # Static assets (images, favicon, etc.)
+├── src/ # Main source code
+│ ├── components/ # Reusable UI components
+│ ├── pages/ # Website pages (Home, About, Contact, Listings)
+│ ├── styles/ # CSS / Tailwind / SCSS files
+│ └── App.js # Entry point
+├── package.json # Dependencies & scripts
+└── README.md # Project documentation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+yaml
+Copy code
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ⚙️ Tech Stack
+- **Frontend**: React / Next.js / Vite (update with what you use)
+- **Styling**: TailwindCSS / CSS / SCSS
+- **Deployment**: Vercel
+- **Optional**: Backend API (Node.js / Express / MongoDB) for dynamic listings
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📦 Installation & Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Clone the repository:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone https://github.com/<your-username>/ysv-real-estate.git
+cd ysv-real-estate
+Install dependencies:
 
-### `npm run eject`
+bash
+Copy code
+npm install
+Run locally:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+bash
+Copy code
+npm run dev
+Build for production:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+bash
+Copy code
+npm run build
+Preview production build:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+bash
+Copy code
+npm run preview
+🚀 Deployment on Vercel
+Push the project to GitHub.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Go to Vercel, log in, and create a New Project.
 
-## Learn More
+Import your GitHub repo.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Set Build Command and Output Directory:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Next.js → next build, output .next
 
-### Code Splitting
+React CRA → npm run build, output build
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Vite → npm run build, output dist
 
-### Analyzing the Bundle Size
+Click Deploy → Your website is live 🎉
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+🌍 Live Demo
+🔗 https://ysv-real-estate.vercel.app
+(Replace with your actual deployed link)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+📜 License
+This project is licensed under the MIT License – free to use and modify.
