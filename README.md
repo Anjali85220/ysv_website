@@ -83,8 +83,8 @@ Vite → npm run build, output dist
 Click Deploy → Your website is live 🎉
 
 🌍 Live Demo
-🔗 https://ysv-real-estate.vercel.app
-(Replace with your actual deployed link)
+🔗https://ysv-website.vercel.app/
+
 
 📜 License
 This project is licensed under the MIT License – free to use and modify.
