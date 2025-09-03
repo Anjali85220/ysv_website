@@ -320,8 +320,30 @@ form button:hover {
   to { transform: scale(1); opacity: 1; }
 }
 
-/* ---------- ✅ Mobile Responsiveness (<=576px only) ---------- */
-/* ---------- ✅ Mobile Responsiveness (<=576px only) ---------- */
+/* ---------- ✅ Tablet/Mobile Responsiveness (<=768px) ---------- */
+@media (max-width: 768px) {
+  .popup-content {
+    max-width: 92%;
+    padding: 16px 34px 16px 14px; /* extra right padding for close btn */
+    border-radius: 10px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .popup-content h2 {
+    font-size: 18px;
+    margin-top: 8px; /* push text below close btn */
+    margin-bottom: 14px;
+  }
+
+  .popup-content .close-btn {
+    font-size: 18px;
+    top: 8px;
+    right: 8px;
+  }
+}
+
+/* ---------- ✅ Mobile Responsiveness (<=576px) ---------- */
 @media (max-width: 576px) {
   .banner {
     flex-direction: column;
@@ -367,24 +389,21 @@ form button:hover {
     border-radius: 16px;
   }
 
-  /* ✅ Popup contact form */
   .popup-content {
     max-width: 92%;
-    padding: 14px;
-    border-radius: 10px;
-    max-height: 90vh;       /* prevent overflow */
-    overflow-y: auto;       /* allow scroll if content too long */
+    padding: 14px 34px 14px 14px; /* extra right padding */
   }
 
   .popup-content h2 {
     font-size: 16px;
+    margin-top: 8px;
     margin-bottom: 12px;
   }
 
   .popup-content .close-btn {
     font-size: 18px;
-    top: 8px;
-    right: 10px;
+    top: 6px;
+    right: 6px;
   }
 
   form label {
