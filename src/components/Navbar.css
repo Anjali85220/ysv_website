@@ -3,7 +3,7 @@
   position: fixed;
   top: 0; left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.25);  /* semi-transparent glass */
+  background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   display: flex;
@@ -12,7 +12,6 @@
   padding: 20px 20px;
   z-index: 1000;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  transition: background 0.3s ease, padding 0.3s ease;
 }
 
 /* Logo */
@@ -25,7 +24,7 @@
   letter-spacing: 1.5px;
 }
 
-/* Nav Links */
+/* Nav Links (Default - Laptop/Desktop ≥ 769px) */
 .nav-links {
   display: flex;
   align-items: center;
@@ -50,7 +49,7 @@
   white-space: nowrap;
 }
 
-/* Transparent button */
+/* Transparent button style */
 .nav-links li a.transparent-btn {
   border: 1.5px solid rgba(0, 153, 255, 0.4);
   background: transparent;
@@ -80,61 +79,58 @@
   background: #0046b3;
 }
 
-/* Hamburger */
+/* Hamburger (hidden by default) */
 .hamburger {
   display: none;
-  font-size: 24px;
+  font-size: 26px;
   cursor: pointer;
   color: #333;
 }
 
-/* Tablet + Mobile View */
-@media (max-width: 992px) {
+/* Mobile & Tablet View (≤ 768px) */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
   .nav-links {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 65px; right: 20px;
+    top: 65px;
+    right: 16px;
+    width: 80%;
+    max-width: 320px;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
-    padding: 16px;
+    padding: 18px;
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-  }
-
-  .nav-links.open { display: flex; }
-  .hamburger { display: block; }
-}
-
-/* Mobile (<= 576px) */
-@media (max-width: 576px) {
-  .navbar {
-    padding: 14px 16px;
-  }
-
-  .logo {
-    font-size: 20px;
-    letter-spacing: 1px;
-  }
-
-  .nav-links {
-    top: 55px;
-    right: 12px;
-    width: 80%;
-    max-width: 300px;
     text-align: center;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-links.open {
+    display: flex;
+    animation: slideDown 0.3s ease;
   }
 
   .nav-links li a {
-    font-size: 14px;
-    padding: 10px;
+    font-size: 15px;
+    padding: 12px;
     justify-content: center;
   }
 
   .primary-btn {
     width: 100%;
     text-align: center;
-    font-size: 14px;
-    padding: 10px;
+    font-size: 15px;
+    padding: 12px;
   }
+}
+
+/* Animation for dropdown */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
