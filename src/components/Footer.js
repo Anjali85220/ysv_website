@@ -15,10 +15,11 @@ const Footer = () => (
     </a>
 
     <div className="footer-content">
-      <p><strong>Murthy Constructions</strong> | Contact: 9177681945</p>
-      <p>Architects/Structures, #39-12-40/1, Vamsinagar, Madhavadhara, Visakhapatnam</p>
-      <p>&copy; {new Date().getFullYear()} Sri Venkata YSV Madhuram</p>
-      
+  <p><strong>Murthy Constructions</strong> | Contact: 9177681945</p>
+  <p>PLOT NO:5, NEAR CAR SHED JN. PM PALEM MAIN ROAD, WARD-4,<br />
+     MADHURAWADA, VISAKHAPATNAM - 530041</p>
+  <p>&copy; {new Date().getFullYear()} Sri Venkata YSV Madhuram</p>
+
       {/* Credit line */}
       <p>
         Designed and Developed by{" "}

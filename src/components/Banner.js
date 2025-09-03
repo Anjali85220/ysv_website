@@ -82,7 +82,7 @@ const Banner = () => {
             Type: <strong>Apartment</strong>
           </div>
           <div className="option">
-            Price: <strong>₹50L–₹1Cr</strong>
+            Price: <strong>₹60L–₹1Cr</strong>
           </div>
         </div>
       </div>
