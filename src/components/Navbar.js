@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-import ContactForm from "./ContactForm";
+import ContactForm from "./ContactForm"; // ✅ import your form
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showForm, setShowForm] = useState(false);
+  const [showForm, setShowForm] = useState(false); // ✅ form state
 
+  // ✅ Close menu when a link is clicked
   const handleLinkClick = () => {
-    setIsOpen(false); // close dropdown when a link is clicked (only mobile/tablet)
+    setIsOpen(false);
   };
 
   return (
@@ -15,7 +16,6 @@ const Navbar = () => {
       <nav className="navbar">
         <div className="logo">MURTHY CONSTRUCTIONS</div>
 
-        {/* Hamburger only for mobile/tablet */}
         <div className="hamburger" onClick={() => setIsOpen(!isOpen)}>
           ☰
         </div>
@@ -29,11 +29,12 @@ const Navbar = () => {
           <li><a href="#specifications" className="transparent-btn" onClick={handleLinkClick}>Specifications</a></li>
           <li><a href="#testimonials" className="transparent-btn" onClick={handleLinkClick}>Testimonials</a></li>
           <li>
+            {/* ✅ Opens popup instead of scrolling */}
             <button
               className="primary-btn"
               onClick={() => {
                 setShowForm(true);
-                setIsOpen(false);
+                setIsOpen(false); // close menu
               }}
             >
               Contact
@@ -42,6 +43,7 @@ const Navbar = () => {
         </ul>
       </nav>
 
+      {/* ✅ Conditionally render the form */}
       {showForm && <ContactForm onClose={() => setShowForm(false)} />}
     </>
   );
