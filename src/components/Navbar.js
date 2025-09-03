@@ -6,6 +6,11 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showForm, setShowForm] = useState(false); // ✅ form state
 
+  // ✅ Close menu when a link is clicked
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
+
   return (
     <>
       <nav className="navbar">
@@ -16,16 +21,22 @@ const Navbar = () => {
         </div>
 
         <ul className={`nav-links ${isOpen ? "open" : ""}`}>
-          <li><a href="#home" className="transparent-btn">Home</a></li>
-          <li><a href="#about-builder" className="transparent-btn">About Builder</a></li>
-          <li><a href="#about-project" className="transparent-btn">About Project</a></li>
-          <li><a href="#location" className="transparent-btn">Location</a></li>
-          <li><a href="#amenities" className="transparent-btn">Amenities</a></li>
-          <li><a href="#specifications" className="transparent-btn">Specifications</a></li>
-          <li><a href="#testimonials" className="transparent-btn">Testimonials</a></li>
+          <li><a href="#home" className="transparent-btn" onClick={handleLinkClick}>Home</a></li>
+          <li><a href="#about-builder" className="transparent-btn" onClick={handleLinkClick}>About Builder</a></li>
+          <li><a href="#about-project" className="transparent-btn" onClick={handleLinkClick}>About Project</a></li>
+          <li><a href="#location" className="transparent-btn" onClick={handleLinkClick}>Location</a></li>
+          <li><a href="#amenities" className="transparent-btn" onClick={handleLinkClick}>Amenities</a></li>
+          <li><a href="#specifications" className="transparent-btn" onClick={handleLinkClick}>Specifications</a></li>
+          <li><a href="#testimonials" className="transparent-btn" onClick={handleLinkClick}>Testimonials</a></li>
           <li>
             {/* ✅ Opens popup instead of scrolling */}
-            <button className="primary-btn" onClick={() => setShowForm(true)}>
+            <button
+              className="primary-btn"
+              onClick={() => {
+                setShowForm(true);
+                setIsOpen(false); // close menu
+              }}
+            >
               Contact
             </button>
           </li>

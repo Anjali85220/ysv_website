@@ -4,12 +4,12 @@
   top: 0; left: 0;
   width: 100%;
   background: rgba(255, 255, 255, 0.25);  /* semi-transparent glass */
-  backdrop-filter: blur(10px);             /* glassmorphism effect */
-  -webkit-backdrop-filter: blur(10px);     /* safari support */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 20px;                      /* ✅ smaller height */
+  padding: 20px 20px;
   z-index: 1000;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   transition: background 0.3s ease, padding 0.3s ease;
@@ -18,7 +18,7 @@
 /* Logo */
 .logo {
   font-family: 'Playfair Display', serif;
-  font-size: 26px;        /* ✅ reduced size */
+  font-size: 26px;
   font-weight: 600;
   color: #0a2e65;
   text-transform: uppercase;
@@ -28,10 +28,10 @@
 /* Nav Links */
 .nav-links {
   display: flex;
-  align-items: center;   /* ✅ ensures vertical centering */
+  align-items: center;
   list-style: none;
   gap: 16px;
-  margin: 0; 
+  margin: 0;
   padding: 0;
 }
 
@@ -42,15 +42,15 @@
   font-weight: 600;
   color: #030a57;
   transition: 0.3s;
-  padding: 8px 12px;     /* ✅ equal height */
+  padding: 8px 12px;
   border-radius: 6px;
   line-height: 1;
-  display: flex;         
+  display: flex;
   align-items: center;
   white-space: nowrap;
 }
 
-/* Transparent button style */
+/* Transparent button */
 .nav-links li a.transparent-btn {
   border: 1.5px solid rgba(0, 153, 255, 0.4);
   background: transparent;
@@ -64,17 +64,19 @@
   transform: translateY(-2px);
 }
 
-/* Login Button */
-.login-btn {
+/* Primary Button */
+.primary-btn {
   background: #0a66ff;
-  color: #fff !important;
-  padding: 7px 16px;
+  color: #fff;
+  padding: 8px 16px;
   border-radius: 6px;
   font-weight: 600;
   font-size: 13px;
+  border: none;
+  cursor: pointer;
 }
 
-.login-btn:hover {
+.primary-btn:hover {
   background: #0046b3;
 }
 
@@ -86,7 +88,7 @@
   color: #333;
 }
 
-/* Tablet + Mobile View (<= 992px) */
+/* Tablet + Mobile View */
 @media (max-width: 992px) {
   .nav-links {
     display: none;
@@ -104,21 +106,21 @@
   .hamburger { display: block; }
 }
 
-/* ✅ Mobile-specific tweaks only (<= 576px) */
+/* Mobile (<= 576px) */
 @media (max-width: 576px) {
   .navbar {
-    padding: 14px 16px;  /* reduce height */
+    padding: 14px 16px;
   }
 
   .logo {
-    font-size: 20px;     /* smaller logo */
+    font-size: 20px;
     letter-spacing: 1px;
   }
 
   .nav-links {
-    top: 55px;           /* closer to navbar */
+    top: 55px;
     right: 12px;
-    width: 80%;          /* dropdown covers more space */
+    width: 80%;
     max-width: 300px;
     text-align: center;
   }
@@ -129,8 +131,8 @@
     justify-content: center;
   }
 
-  .login-btn {
-    width: 100%;         /* full width button */
+  .primary-btn {
+    width: 100%;
     text-align: center;
     font-size: 14px;
     padding: 10px;
