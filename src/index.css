@@ -6,6 +6,10 @@
 }
 
 html, body {
+  overflow: auto !important;
+}
+
+html, body {
   height: 100%;
   width: 100%;
   font-family: "Poppins", sans-serif;
@@ -22,4 +26,11 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+/* Ensure sections don't hide behind fixed navbar */
+#about-project,
+#about-builder,
+#location {
+  scroll-margin-top: 120px;   /* ensures nav scroll stops below navbar */
 }

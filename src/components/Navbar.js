@@ -1,15 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
-import "./Popup.css"; // styles for popup
+import ContactForm from "./ContactForm"; // ✅ import your form
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showPopup, setShowPopup] = useState(false);
-
-  // Show popup when page loads
-  useEffect(() => {
-    setShowPopup(true);
-  }, []);
+  const [showForm, setShowForm] = useState(false); // ✅ form state
 
   return (
     <>
@@ -29,34 +24,16 @@ const Navbar = () => {
           <li><a href="#specifications" className="transparent-btn">Specifications</a></li>
           <li><a href="#testimonials" className="transparent-btn">Testimonials</a></li>
           <li>
-            <button 
-              className="login-btn" 
-              onClick={() => setShowPopup(true)}
-            >
+            {/* ✅ Opens popup instead of scrolling */}
+            <button className="primary-btn" onClick={() => setShowForm(true)}>
               Contact
             </button>
           </li>
         </ul>
       </nav>
 
-      {/* Popup */}
-      {showPopup && (
-        <div className="popup-overlay">
-          <div className="popup-box">
-            <button className="popup-close" onClick={() => setShowPopup(false)}>
-              ✕
-            </button>
-            <h2>Get in Touch</h2>
-            <form className="popup-form">
-              <input type="text" placeholder="Name*" required />
-              <input type="email" placeholder="Email*" required />
-              <input type="tel" placeholder="Mobile*" required />
-              <textarea placeholder="Your Message" rows="4"></textarea>
-              <button type="submit" className="submit-btn">Submit</button>
-            </form>
-          </div>
-        </div>
-      )}
+      {/* ✅ Conditionally render the form */}
+      {showForm && <ContactForm onClose={() => setShowForm(false)} />}
     </>
   );
 };

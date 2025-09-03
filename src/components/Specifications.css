@@ -1,8 +1,8 @@
 .specs {
   padding: 5rem 2rem;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #edf6f7, #e9eeef); /* modern soft teal gradient */
-  color: #1f2937; /* default text color */
+  background: linear-gradient(135deg, #edf6f7, #e9eeef);
+  color: #1f2937;
 }
 
 .section-title {
@@ -10,7 +10,7 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 3rem;
-  color: #0c4a6e; /* darker teal for heading */
+  color: #0c4a6e;
 }
 
 .specs-grid {
@@ -53,7 +53,7 @@
 }
 
 .details h3 {
-  color: #1c72a3; /* match theme */
+  color: #1c72a3;
   margin-bottom: 1rem;
   font-size: 1.5rem;
   font-weight: 600;
@@ -77,19 +77,19 @@
   content: "✔";
   position: absolute;
   left: 0;
-  color: #06b6d4; /* accent teal checkmark */
+  color: #06b6d4;
   font-weight: bold;
 }
 
 .structure {
   margin: 3rem auto 0 auto;
   max-width: 800px;
-  background: linear-gradient(135deg, #ffffff, #e0f7fa); /* lighter gradient */
+  background: linear-gradient(135deg, #ffffff, #e0f7fa);
   padding: 2rem;
   border-radius: 20px;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
   text-align: center;
-  border-left: 6px solid #06b6d4; /* theme accent */
+  border-left: 6px solid #06b6d4;
   border-right: 6px solid #06b6d4;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -100,7 +100,7 @@
 }
 
 .structure h3 {
-  color: #0284c7; /* darker teal heading */
+  color: #0284c7;
   margin-bottom: 1rem;
   font-size: 1.6rem;
   font-weight: 700;
@@ -110,4 +110,82 @@
   color: #1f2937;
   line-height: 1.7;
   font-size: 1rem;
+}
+
+/* ✅ Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .specs {
+    padding: 3rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .floorplan {
+    max-width: 320px;
+    border-radius: 15px;
+  }
+
+  .details {
+    padding: 1.5rem;
+  }
+
+  .details h3 {
+    font-size: 1.2rem;
+  }
+
+  .features-list li {
+    font-size: 0.9rem;
+  }
+
+  .structure {
+    padding: 1.5rem;
+    margin: 2rem auto 0 auto;
+  }
+
+  .structure h3 {
+    font-size: 1.3rem;
+  }
+
+  .structure p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+/* ✅ Very Small Devices (Phones < 480px) */
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .floorplan {
+    max-width: 260px;
+  }
+
+  .details {
+    padding: 1rem;
+  }
+
+  .details h3 {
+    font-size: 1rem;
+  }
+
+  .features-list li {
+    font-size: 0.85rem;
+  }
+
+  .structure {
+    padding: 1rem;
+  }
+
+  .structure h3 {
+    font-size: 1.1rem;
+  }
+
+  .structure p {
+    font-size: 0.85rem;
+  }
 }

@@ -1,17 +1,17 @@
 .location {
-  padding: 80px 10%;
+  padding: 60px 8%;   /* reduced */
   background: linear-gradient(135deg, #d3f0f1, #fefaf1);
   border-radius: 20px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   text-align: center;
   margin: 60px auto;
-  max-width: 1200px;
+  max-width: 1200px;   /* narrower for better fit */
 }
 
 .location h2 {
-  font-size: 34px;
+  font-size: 28px;    /* reduced from 34px */
   font-weight: 700;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   color: #333;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -21,33 +21,33 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 20px;           /* smaller spacing */
 }
 
 /* Images */
 .location-images {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 30px;           /* reduced */
   flex-wrap: wrap;
 }
 
 .image-card {
   background: #fff;
   border-radius: 16px;
-  padding: 16px;
+  padding: 14px;       /* smaller padding */
   box-shadow: 0 6px 15px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .image-card img {
-  width: 260px;
+  width: 220px;        /* reduced from 260px */
   border-radius: 12px;
 }
 
 .image-card p {
-  margin-top: 10px;
-  font-size: 14px;
+  margin-top: 8px;
+  font-size: 13px;     /* smaller text */
   color: #555;
   font-weight: 500;
 }
@@ -63,15 +63,15 @@
 }
 
 .address {
-  font-size: 16px;
+  font-size: 15px;     /* smaller */
   color: #444;
-  line-height: 1.6;
+  line-height: 1.5;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
-  max-width: 700px;
+  gap: 8px;
+  margin-bottom: 18px;
+  max-width: 600px;    /* narrower */
   margin-left: auto;
   margin-right: auto;
 }
@@ -88,9 +88,10 @@
   background: linear-gradient(135deg, #c29f26, #e3d186);
   color: #fff;
   font-weight: 600;
-  padding: 12px 24px;
-  border-radius: 40px;
+  padding: 10px 20px;  /* smaller button */
+  border-radius: 30px;
   text-decoration: none;
+  font-size: 14px;     /* smaller text */
   box-shadow: 0 6px 12px rgba(194,159,38,0.3);
   transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -115,5 +116,39 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* ✅ Mobile adjustments */
+@media (max-width: 768px) {
+  .location {
+    padding: 40px 6%;
+  }
+
+  .location h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .location-images {
+    gap: 20px;
+  }
+
+  .image-card img {
+    width: 160px;
+  }
+
+  .image-card p {
+    font-size: 12px;
+  }
+
+  .address {
+    font-size: 13px;
+    max-width: 90%;
+  }
+
+  .map-link {
+    font-size: 12px;
+    padding: 8px 16px;
   }
 }

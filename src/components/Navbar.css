@@ -1,94 +1,138 @@
-/* Navbar styles remain same */
+/* Navbar */
 .navbar {
   position: fixed;
   top: 0; left: 0;
   width: 100%;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.25);  /* semi-transparent glass */
+  backdrop-filter: blur(10px);             /* glassmorphism effect */
+  -webkit-backdrop-filter: blur(10px);     /* safari support */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 60px;
+  padding: 20px 20px;                      /* ✅ smaller height */
   z-index: 1000;
-  border-bottom: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background 0.3s ease, padding 0.3s ease;
 }
 
+/* Logo */
 .logo {
   font-family: 'Playfair Display', serif;
-  font-size: 32px;
-  font-weight: 500;
+  font-size: 26px;        /* ✅ reduced size */
+  font-weight: 600;
   color: #0a2e65;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
 }
 
+/* Nav Links */
 .nav-links {
   display: flex;
+  align-items: center;   /* ✅ ensures vertical centering */
   list-style: none;
-  gap: 20px;
-  margin: 0; padding: 0;
+  gap: 16px;
+  margin: 0; 
+  padding: 0;
 }
 
-/* Default link style */
 .nav-links li a {
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 600;
   color: #030a57;
   transition: 0.3s;
-  padding: 6px 14px;
-  border-radius: 8px;
-  white-space: nowrap; /* ✅ keeps text on one line */
+  padding: 8px 12px;     /* ✅ equal height */
+  border-radius: 6px;
+  line-height: 1;
+  display: flex;         
+  align-items: center;
+  white-space: nowrap;
 }
 
-
-/* Transparent button style only for some items */
+/* Transparent button style */
 .nav-links li a.transparent-btn {
-  border: 2px solid rgba(0, 153, 255, 0.5); /* light blue border */
+  border: 1.5px solid rgba(0, 153, 255, 0.4);
   background: transparent;
   transition: all 0.3s ease;
 }
 
-/* Hover effect */
 .nav-links li a.transparent-btn:hover {
-  background: rgba(0, 153, 255, 0.1); /* light blue shade on hover */
+  background: rgba(0, 153, 255, 0.08);
   border-color: #0099ff;
   color: #0099ff;
   transform: translateY(-2px);
 }
 
-/* Login button stays filled */
+/* Login Button */
 .login-btn {
   background: #0a66ff;
   color: #fff !important;
-  padding: 8px 18px;
+  padding: 7px 16px;
   border-radius: 6px;
   font-weight: 600;
+  font-size: 13px;
 }
 
 .login-btn:hover {
   background: #0046b3;
 }
 
+/* Hamburger */
 .hamburger {
   display: none;
-  font-size: 26px;
+  font-size: 24px;
   cursor: pointer;
   color: #333;
 }
 
+/* Tablet + Mobile View (<= 992px) */
 @media (max-width: 992px) {
   .nav-links {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 70px; right: 20px;
-    background: #fff;
-    padding: 20px;
+    top: 65px; right: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    padding: 16px;
     border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
   }
 
   .nav-links.open { display: flex; }
   .hamburger { display: block; }
+}
+
+/* ✅ Mobile-specific tweaks only (<= 576px) */
+@media (max-width: 576px) {
+  .navbar {
+    padding: 14px 16px;  /* reduce height */
+  }
+
+  .logo {
+    font-size: 20px;     /* smaller logo */
+    letter-spacing: 1px;
+  }
+
+  .nav-links {
+    top: 55px;           /* closer to navbar */
+    right: 12px;
+    width: 80%;          /* dropdown covers more space */
+    max-width: 300px;
+    text-align: center;
+  }
+
+  .nav-links li a {
+    font-size: 14px;
+    padding: 10px;
+    justify-content: center;
+  }
+
+  .login-btn {
+    width: 100%;         /* full width button */
+    text-align: center;
+    font-size: 14px;
+    padding: 10px;
+  }
 }
