@@ -23,8 +23,8 @@
   width: 100%;
   max-width: 600px;              
   height: auto;                 
-  box-shadow: 0px 10px 30px rgb(250, 249, 249),
-              0 0 15px rgb(245, 246, 247);
+  box-shadow: 0px 10px 30px rgba(250, 249, 249, 0.297),
+              0 0 15px rgba(245, 246, 247, 0.137);
   position: relative;
   border: 1px solid rgb(241, 244, 245);
   animation: scaleIn 0.25s ease;
@@ -58,7 +58,7 @@
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 16px;
-  background: linear-gradient(90deg, #00f5ff, #ff4ecd, #00ff85);
+  background: linear-gradient(90deg, #00f5ff, #3c6fbc, #00ff85);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -126,7 +126,7 @@ form textarea {
 form button {
   width: 100%;
   padding: 12px;
-  background: linear-gradient(135deg, #00f5ff, #ff4ecd, #00ff85);
+  background: linear-gradient(135deg, #00f5ff, #3a68be, #5921e7);
   border: none;
   color: white;
   font-size: 15px;
@@ -138,7 +138,7 @@ form button {
   letter-spacing: 1px;
 }
 form button:hover {
-  background: linear-gradient(135deg, #ff4ecd, #00f5ff, #ffdd00);
+  background:blueviolet;
   box-shadow: 0 0 12px rgba(255, 78, 205, 0.6);
 }
 
