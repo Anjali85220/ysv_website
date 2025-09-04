@@ -212,31 +212,35 @@
   animation: scaleIn 0.25s ease;
 }
 
-/* Close Button */
-.popup-content .close-btn {
-  position: absolute;
-  top: 12px;
-  right: 14px;
+/* ---------- Popup Header (Flex for Title + Close Btn) ---------- */
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.popup-header h2 {
+  font-size: 20px;
+  font-weight: 700;
+  background: lightskyblue;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.popup-header .close-btn {
   font-size: 20px;
   font-weight: bold;
   color: #00f5ff;
   cursor: pointer;
   transition: color 0.25s, transform 0.2s;
+  background: none;
+  border: none;
 }
-.popup-content .close-btn:hover {
+.popup-header .close-btn:hover {
   color: #ff4ecd;
   transform: rotate(90deg);
-}
-
-/* Title */
-.popup-content h2 {
-  text-align: center;
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 16px;
-  background: lightskyblue;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 /* Form */
@@ -324,22 +328,18 @@ form button:hover {
 @media (max-width: 768px) {
   .popup-content {
     max-width: 92%;
-    padding: 16px 34px 16px 14px; /* extra right padding for close btn */
+    padding: 16px;
     border-radius: 10px;
     max-height: 90vh;
     overflow-y: auto;
   }
 
-  .popup-content h2 {
+  .popup-header h2 {
     font-size: 18px;
-    margin-top: 8px; /* push text below close btn */
-    margin-bottom: 14px;
   }
 
-  .popup-content .close-btn {
+  .popup-header .close-btn {
     font-size: 18px;
-    top: 8px;
-    right: 8px;
   }
 }
 
@@ -389,21 +389,12 @@ form button:hover {
     border-radius: 16px;
   }
 
-  .popup-content {
-    max-width: 92%;
-    padding: 14px 34px 14px 14px; /* extra right padding */
-  }
-
-  .popup-content h2 {
+  .popup-header h2 {
     font-size: 16px;
-    margin-top: 8px;
-    margin-bottom: 12px;
   }
 
-  .popup-content .close-btn {
-    font-size: 18px;
-    top: 6px;
-    right: 6px;
+  .popup-header .close-btn {
+    font-size: 16px;
   }
 
   form label {

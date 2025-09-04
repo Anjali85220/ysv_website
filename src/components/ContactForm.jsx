@@ -1,34 +1,51 @@
 import React from "react";
-import "./ContactForm.css"; // ✅ your popup styles
+import emailjs from "emailjs-com";
+import "./ContactForm.css"; // ✅ keep your popup styles
 
 const ContactForm = ({ onClose }) => {
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    // TODO: handle actual form submission (API, email, etc.)
-    alert("Form submitted successfully!");
-    onClose(); // ✅ close popup after submit
+
+    emailjs
+      .sendForm(
+        "service_d9fnf5s",   // ✅ replace with your EmailJS Service ID
+        "template_gtb395g",  // ✅ replace with your EmailJS Template ID
+        e.target,
+        "lVxA2r26bLwNO0oNy"  // ✅ replace with your EmailJS Public Key
+      )
+      .then(
+        () => {
+          alert("Form submitted successfully!");
+          e.target.reset();
+          onClose();
+        },
+        (error) => {
+          alert("Failed to send. Please try again.");
+          console.error(error.text);
+        }
+      );
   };
 
   return (
     <div className="popup-overlay">
       <div className="popup-content">
-        <button className="close-btn" onClick={onClose}>
-          ✖
-        </button>
-        <h2>Submit the Form to Download Brochure</h2>
+        <div className="popup-header">
+          <h2>Submit the Form to Download Brochure</h2>
+          <button className="close-btn" onClick={onClose}>✖</button>
+        </div>
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={sendEmail}>
           <label>Name</label>
-          <input type="text" placeholder="Enter your Name" required />
+          <input type="text" name="user_name" placeholder="Enter your Name" required />
 
           <label>Email</label>
-          <input type="email" placeholder="Enter your Email Id" required />
+          <input type="email" name="user_email" placeholder="Enter your Email Id" required />
 
           <label>Phone</label>
-          <input type="tel" placeholder="Enter your phone number" required />
+          <input type="tel" name="user_phone" placeholder="Enter your phone number" required />
 
           <label>Message</label>
-          <textarea placeholder="Type your message" />
+          <textarea name="message" placeholder="Type your message" />
 
           <div className="checkbox">
             <input type="checkbox" required />

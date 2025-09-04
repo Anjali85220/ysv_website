@@ -1,26 +1,51 @@
 import React, { useState, useEffect } from "react";
+import emailjs from "emailjs-com";
 import "./Banner.css";
 
 const ContactForm = ({ onClose }) => {
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_d9fnf5s",   // 🔹 replace with your EmailJS service ID
+        "template_gtb395g",  // 🔹 replace with your EmailJS template ID
+        e.target,
+        "lVxA2r26bLwNO0oNy"    // 🔹 replace with your EmailJS public key
+      )
+      .then(
+        () => {
+          alert("Form submitted successfully!");
+          e.target.reset();
+          onClose();
+        },
+        (error) => {
+          alert("Failed to send. Please try again.");
+          console.error(error.text);
+        }
+      );
+  };
+
   return (
     <div className="popup-overlay">
       <div className="popup-content">
-        <button className="close-btn" onClick={onClose}>
-          ✖
-        </button>
-        <h2>Submit the Form to Download Brochure</h2>
-        <form>
+        <div className="popup-header">
+          <h2>Submit the Form to Download Brochure</h2>
+          <button className="close-btn" onClick={onClose}>✖</button>
+        </div>
+
+        <form onSubmit={sendEmail}>
           <label>Name</label>
-          <input type="text" placeholder="Enter your Name" required />
+          <input type="text" name="user_name" placeholder="Enter your Name" required />
 
           <label>Email</label>
-          <input type="email" placeholder="Enter your Email Id" required />
+          <input type="email" name="user_email" placeholder="Enter your Email Id" required />
 
           <label>Phone</label>
-          <input type="tel" placeholder="Enter your phone number" required />
+          <input type="tel" name="user_phone" placeholder="Enter your phone number" required />
 
           <label>Message</label>
-          <textarea placeholder="Type your message" />
+          <textarea name="message" placeholder="Type your message" />
 
           <div className="checkbox">
             <input type="checkbox" required />
@@ -44,12 +69,10 @@ const Banner = () => {
   const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
-    // Image slider
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
     }, 4000);
 
-    // Show popup after 15 seconds
     const popupTimer = setTimeout(() => {
       setShowForm(true);
     }, 10000);
