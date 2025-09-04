@@ -1,6 +1,6 @@
 import React from "react";
 import "./Location.css";
-import { MapPin, ExternalLink } from "lucide-react"; // icons
+import { ExternalLink, CheckCircle } from "lucide-react"; // icons
 
 const Location = () => (
   <section id="location" className="location">
@@ -19,15 +19,19 @@ const Location = () => (
         </div>
       </div>
 
-      {/* Address & Link */}
+      {/* Styled Location Advantage */}
       <div className="location-text">
-        <p className="address">
-          <MapPin size={20} className="icon" />
-          <span>
-            PLOT NO:5, NEAR CAR SHED JN. PM PALEM MAIN ROAD, WARD-4, <br />
-            MADHURAWADA, VISAKHAPATNAM - 530041
-          </span>
-        </p>
+        <div className="location-advantage">
+          <ul>
+            <li><CheckCircle size={18} className="check-icon" /> 5 kms from Rushikonda Beach</li>
+            <li><CheckCircle size={18} className="check-icon" /> 1 km from DMart</li>
+            <li><CheckCircle size={18} className="check-icon" /> Next to Janoos Water Park</li>
+            <li><CheckCircle size={18} className="check-icon" /> Located in the Center of the City</li>
+            <li><CheckCircle size={18} className="check-icon" /> 2 km from the Cricket Stadium</li>
+            <li><CheckCircle size={18} className="check-icon" /> Perfect for Families in Visakhapatnam</li>
+          </ul>
+        </div>
+<br></br>
         <a
           href="https://maps.app.goo.gl/yi4aViBMQriy2s1X9"
           target="_blank"

@@ -152,3 +152,37 @@
     padding: 8px 16px;
   }
 }
+
+.location-advantage {
+  margin-top: 15px;
+  padding: 15px;
+  background: #f9fafc;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.location-advantage h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.location-advantage ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.location-advantage li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #444;
+}
+
+.check-icon {
+  color: #2e7d32; /* green for tick */
+  margin-right: 8px;
+}
