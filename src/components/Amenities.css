@@ -207,13 +207,17 @@
   color: #3b2aef;
   margin-bottom: 12px;
 }
-
+/* Extra Card Text */
 .extra-card p {
   font-size: 1rem;
   font-weight: 600;
   color: #222;
   margin: 0;
+  padding: 0 10px;   /* ✅ add horizontal padding */
+  line-height: 1.3;  /* ✅ improve readability */
 }
+
+
 
 /* ✅ Mobile Responsive Adjustments */
 @media (max-width: 768px) {
@@ -297,11 +301,12 @@
     font-size: 22px;
     margin-bottom: 8px;
   }
-
-  .extra-card p {
+   .extra-card p {
     font-size: 0.85rem;
     text-align: center;
+    padding: 0 8px;   /* ✅ keep text away from edges */
   }
+
 }
 
 /* ✅ Very Small Devices (phones under 480px) */
@@ -317,5 +322,9 @@
   .extra-card {
     max-width: 140px;
     height: 130px;
+  }
+    .extra-card p {
+    font-size: 0.8rem;
+    padding: 0 6px;   /* ✅ extra safe on very small screens */
   }
 }

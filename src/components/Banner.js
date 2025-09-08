@@ -6,12 +6,20 @@ const ContactForm = ({ onClose }) => {
   const sendEmail = (e) => {
     e.preventDefault();
 
+    // ✅ Track GA4 event when form is submitted
+    if (window.gtag) {
+      window.gtag("event", "contact_form_submit", {
+        event_category: "lead",
+        event_label: "Popup Contact Form",
+      });
+    }
+
     emailjs
       .sendForm(
         "service_d9fnf5s",   // 🔹 replace with your EmailJS service ID
         "template_gtb395g",  // 🔹 replace with your EmailJS template ID
         e.target,
-        "lVxA2r26bLwNO0oNy"    // 🔹 replace with your EmailJS public key
+        "lVxA2r26bLwNO0oNy"  // 🔹 replace with your EmailJS public key
       )
       .then(
         () => {
@@ -56,6 +64,7 @@ const ContactForm = ({ onClose }) => {
             </span>
           </div>
 
+          {/* ✅ GA4 will track this submit button */}
           <button type="submit">Submit</button>
         </form>
       </div>
