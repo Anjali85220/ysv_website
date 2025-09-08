@@ -59,7 +59,7 @@
 }
 
 .banner-left h4 {
-  color: #0a66ff;
+  color: #111112;
   font-size: 1rem;
   margin-bottom: 0.8rem;
   font-weight: 600;
@@ -68,17 +68,35 @@
   animation: fadeIn 1.5s ease-in-out;
 }
 
-.banner-left h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3.5rem;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+.banner-left h1.sri {
+  font-size: 2rem;   /* smaller */
   background: linear-gradient(90deg, #0a2e65, #0a66ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 2px 4px 12px rgba(0,0,0,0.1);
-  animation: textGlow 2s ease-in-out infinite alternate;
+  background-clip: text;    /* ✅ black */
+  margin: 0;
+font-family: 'Playfair Display', sans-serif;
+
 }
+
+.banner-left h1.ysv {
+  font-size: 3.5rem; /* bigger */
+  background: linear-gradient(90deg, #0a2e65, #0a66ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;    /* ✅ blue */
+  margin: 0px 0 0px 0;
+  font-family: 'Playfair Display', serif;
+  
+}
+
+.banner-left h1.sri,
+.banner-left h1.ysv {
+  margin: 0 !important;       /* remove default margin */
+  padding: 0 !important;      /* no padding */
+  line-height: 1 !important;  /* tighten spacing */
+}
+
 
 .banner-left h1 span {
   color: #ff6f61;
@@ -341,6 +359,12 @@ form button:hover {
   .popup-header .close-btn {
     font-size: 18px;
   }
+  .banner-left h1.sri {
+    font-size: 1.6rem;
+  }
+  .banner-left h1.ysv {
+    font-size: 2.5rem;
+  }
 }
 
 /* ---------- ✅ Mobile Responsiveness (<=576px) ---------- */
@@ -349,12 +373,14 @@ form button:hover {
     flex-direction: column;
     padding: 80px 20px 40px;
     height: auto;
-    text-align: center;
+   text-align: left;
   }
 
   .banner-left {
     max-width: 100%;
     margin-bottom: 30px;
+    align-items: flex-start; /* ✅ keep left aligned */
+    justify-content: center; /* ✅ vertical center */
   }
 
   .banner-left h1 {
@@ -419,4 +445,26 @@ form button:hover {
     font-size: 13px;
     padding: 9px;
   }
+.banner-left h1.sri {
+  font-size: 1.3rem;
+  font-family: 'Playfair Display', sans-serif;
+  margin: 0;
+  background: linear-gradient(90deg, #0a2e65, #0a66ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* for Firefox */
+}
+
+.banner-left h1.ysv {
+  font-size: 2rem;
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+  background: linear-gradient(90deg, #0a2e65, #0a66ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* for Firefox */
+}
+
+
+
 }

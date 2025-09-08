@@ -6,7 +6,6 @@ const ContactForm = ({ onClose }) => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    // ✅ Track GA4 event when form is submitted
     if (window.gtag) {
       window.gtag("event", "contact_form_submit", {
         event_category: "lead",
@@ -16,10 +15,10 @@ const ContactForm = ({ onClose }) => {
 
     emailjs
       .sendForm(
-        "service_d9fnf5s",   // 🔹 replace with your EmailJS service ID
-        "template_gtb395g",  // 🔹 replace with your EmailJS template ID
+        "service_d9fnf5s",
+        "template_gtb395g",
         e.target,
-        "lVxA2r26bLwNO0oNy"  // 🔹 replace with your EmailJS public key
+        "lVxA2r26bLwNO0oNy"
       )
       .then(
         () => {
@@ -64,7 +63,6 @@ const ContactForm = ({ onClose }) => {
             </span>
           </div>
 
-          {/* ✅ GA4 will track this submit button */}
           <button type="submit">Submit</button>
         </form>
       </div>
@@ -96,11 +94,13 @@ const Banner = () => {
     <div className="banner" id="home">
       {/* Left Content */}
       <div className="banner-left">
-        <h4>WELCOME TO</h4>
-        <h1>
-          SRI VENKATA YSV <br />
-          <span>MADHURAM</span>
-        </h1>
+        <h4 style={{ fontFamily: "'Playfair Display', serif !important" }}>
+  WELCOME TO
+</h4>
+
+        <h1 className="sri">SRI VENKATA</h1>
+        <h1 className="ysv">YSV MADHURAM</h1>
+        <br />
         <p>
           A house is made of bricks and beams. <br />
           A home is made of hopes and dreams.
